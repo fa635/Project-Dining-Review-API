@@ -1,6 +1,7 @@
 package com.fa.Project_Dining_Review_API.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
@@ -10,6 +11,8 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Max;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated; 
 
 @Getter
 @Setter
@@ -46,5 +49,12 @@ public class DiningReview {
     @Column(name = "COMMENTARY", nullable = true)
     private String comentary;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "REVIEW_STATUS")
+    private ReviewStatus reviewStatus = ReviewStatus.PENDING;
+    
+    public void processAdminAction(AdminReviewAction action) {
+        this.reviewStatus = action.getReviewStatus();
+    }
 }
 
