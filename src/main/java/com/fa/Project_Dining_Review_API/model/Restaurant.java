@@ -21,19 +21,19 @@ public class Restaurant {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "RESATAURANTNAME")
+    @Column(name = "RESATAURANT_NAME")
     private String name;
 
-    @Column(name = "RESATAURANTPEANUTSCORE")
+    @Column(name = "RESATAURANT_PEANUT_SCORE")
     private Float peanutScore;
   
-    @Column(name = "RESATAURANTEGGSCORE")
+    @Column(name = "RESATAURANT_EGG_SCORE")
     private Float eggScore;
 
-    @Column(name = "RESATAURANTDAIRYSCORE")
+    @Column(name = "RESATAURANT_DAIRY_SCORE")
     private Float dairyScore;
 
-    @Column(name = "RESATAURANTOVERALLSCORE")
+    @Column(name = "RESATAURANT_OVERALL_SCORE")
     private Float overallScore;
 
 }

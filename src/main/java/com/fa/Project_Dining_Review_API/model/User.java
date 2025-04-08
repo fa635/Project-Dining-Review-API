@@ -21,7 +21,7 @@ public class User {
     private Long id;
 
     @Column(name = "USERNAME", nullable = true)
-    private String userName;
+    private String username;
 
     @Column(name = "CITY")
     private String city;
@@ -29,16 +29,16 @@ public class User {
     @Column(name = "STATE")
     private String state;
 
-    @Column(name = "ZIPCODE")
+    @Column(name = "ZIP_CODE")
     private Integer zipCode;
 
-    @Column(name = "ISINTERESTEDINPEANUTALLERGIES")
+    @Column(name = "IS_INTERESTED_IN_PEANUT_ALLERGIES")
     private Boolean isInterestedInPeanutAllergies;
 
-    @Column(name = "ISINTERESTEDINEGGALLERGIES")
+    @Column(name = "IS_INTERESTED_IN_EGG_ALLERGIES")
     private Boolean isInterestedInEggAllergies;
 
-    @Column(name = "ISINTERESTEDINDAIRYALLERGIES")
+    @Column(name = "IS_INTERESTED_IN_DAIRY_ALLERGIES")
     private Boolean isInterestedInDairyAllergies;
     
 }
