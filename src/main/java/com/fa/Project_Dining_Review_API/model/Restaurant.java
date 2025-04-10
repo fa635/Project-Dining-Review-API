@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "RESATAURANTS")
+@Table(name = "RESTAURANTS")
 public class Restaurant {
     
     @Id

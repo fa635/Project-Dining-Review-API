@@ -5,6 +5,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +14,6 @@ import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Max;
 import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated; 
 
 @Getter
 @Setter
@@ -25,8 +26,9 @@ public class DiningReview {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "REVIEWER", unique = true)
-    private String reviewer;
+    @ManyToOne
+    @JoinColumn(name = "REVIEWER_ID", nullable = false)
+    private User reviewer;
 
     @Column(name = "RESTAURANT")
     private Long restaurantId;
