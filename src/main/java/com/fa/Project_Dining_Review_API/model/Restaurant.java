@@ -6,6 +6,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -18,22 +19,22 @@ import lombok.NoArgsConstructor;
 public class Restaurant {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "RESATAURANT_NAME")
+    @Column(name = "RESTAURANT_NAME", unique = true)
     private String name;
 
-    @Column(name = "RESATAURANT_PEANUT_SCORE")
+    @Column(name = "RESTAURANT_PEANUT_SCORE", nullable = true)
     private Float peanutScore;
   
-    @Column(name = "RESATAURANT_EGG_SCORE")
+    @Column(name = "RESTAURANT_EGG_SCORE", nullable = true)
     private Float eggScore;
 
-    @Column(name = "RESATAURANT_DAIRY_SCORE")
+    @Column(name = "RESTAURANT_DAIRY_SCORE", nullable = true)
     private Float dairyScore;
 
-    @Column(name = "RESATAURANT_OVERALL_SCORE")
+    @Column(name = "RESTAURANT_OVERALL_SCORE")
     private Float overallScore;
 
 }

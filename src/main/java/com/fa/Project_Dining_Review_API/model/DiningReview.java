@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -23,15 +24,16 @@ import jakarta.persistence.EnumType;
 public class DiningReview {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "REVIEWER_ID", nullable = false)
     private User reviewer;
 
-    @Column(name = "RESTAURANT")
-    private Long restaurantId;
+    @ManyToOne
+    @JoinColumn(name = "RESTAURANT_ID")
+    private Restaurant restaurant;
 
     @Min(1)
     @Max(5)
